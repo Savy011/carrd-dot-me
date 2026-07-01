@@ -1,0 +1,8 @@
+- label: about me
+  id: "#about"
+- label: stanlist
+  id: "#stanlist"
+- label: likes
+  id: "#likes"
+- label: byf
+  id: "#byf"
