@@ -5,6 +5,8 @@
   "scripts": {
     "start": "eleventy --serve",
     "dev": "eleventy --serve",
+    "debug": "cross-env DEBUG=Eleventy:* pnpm start",
+    "debug:data": "cross-env DEBUG=Eleventy:Data* pnpm start",
     "build": "eleventy",
     "fmt": "prettier --write ."
   },
@@ -24,6 +26,7 @@
   "type": "module",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.6",
+    "cross-env": "^10.1.0",
     "prettier": "^3.8.5",
     "prettier-plugin-jinja-template": "^2.2.0",
     "yaml": "^2.9.0"
