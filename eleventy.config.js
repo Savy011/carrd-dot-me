@@ -7,6 +7,8 @@ export default function (cfg) {
 
   cfg.addDataExtension("yaml,yml", contents => YAML.parse(contents));
 
+  cfg.addFilter("titlecase", str => str.replace(/\b\w/g, c => c.toUpperCase()));
+
   return {
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
