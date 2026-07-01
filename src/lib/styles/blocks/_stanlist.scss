@@ -8,7 +8,7 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
 
   div {
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     border: c.$border;
     border-top: none;
 
@@ -24,12 +24,18 @@
   &__list {
     font-family: c.$fonts-body;
     text-align: center;
+  }
 
-    :not(:last-child) {
-      &::after {
-        content: ",\00a0";
-      }
-    }
+  &__list-item {
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent calc(100% - 4px),
+      map.get(c.$colors, "cinnamoroll-blue") calc(100% - 4px),
+      map.get(c.$colors, "cinnamoroll-blue") 100%
+    );
   }
 
   @media (max-width: c.$size-sm) {

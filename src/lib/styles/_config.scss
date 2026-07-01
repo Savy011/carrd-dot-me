@@ -24,9 +24,8 @@ $size-sm: 640px;
  * COLORS
  */
 $colors: (
-  "primary": #fa576e,
-  "primary-shade": #fc3e59,
-  "primary-glare": #f26c7f,
+  "pastel-red": #ff6961,
+  "cinnamoroll-blue": #c1e7f5,
 );
 
-$border: 2px map.get($colors, "primary") solid;
+$border: 2px map.get($colors, "pastel-red") solid;

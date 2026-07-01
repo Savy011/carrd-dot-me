@@ -1,4 +1,7 @@
+@use "sass:map";
+
 @use "reset";
+@use "config" as c;
 
 @use "blocks/header";
 @use "blocks/stanlist";
@@ -8,9 +11,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  height: 100svh;
+  background: map.get(c.$colors, "cinnamoroll-blue");
 }
 
 .wrapper {
+  background-color: white;
+  margin: 2rem;
   max-width: 576px;
 }

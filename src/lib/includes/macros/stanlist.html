@@ -3,8 +3,9 @@
     <h3 class="stanlist__heading">{{ heading }}</h3>
     <p class="stanlist__list">
       {% for item in items %}
-        {% if item.group %}{{ item.group }} -{% endif %}
-        {{ item.member }}{% if not loop.last %},{% endif %}
+        <span class="stanlist__list-item"
+          >{% if item.group %}{{ item.group }} -{% endif %} {{ item.member }}</span
+        >{% if not loop.last %},{% endif %}
       {% endfor %}
     </p>
   </div>

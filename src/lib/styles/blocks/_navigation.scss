@@ -10,11 +10,9 @@
     padding: 0.5rem;
     border: c.$border;
     border-top: none;
-    border-right: none;
-    border-right: none;
-  }
 
-  :last-child {
-    border-right: c.$border;
+    &:not(:last-child) {
+      border-right: none;
+    }
   }
 }
