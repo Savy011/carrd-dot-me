@@ -11,3 +11,9 @@ npm-debug.*
 .sass-cache
 .env
 .cache
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example

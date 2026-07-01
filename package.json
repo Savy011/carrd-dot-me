@@ -5,10 +5,12 @@
   "scripts": {
     "start": "eleventy --serve",
     "dev": "eleventy --serve",
+    "build": "eleventy",
+    "preview": "pnpm run build && wrangler dev",
+    "deploy": "pnpm run build && wrangler deploy",
     "debug": "cross-env DEBUG=Eleventy:* pnpm start",
     "debug:data": "cross-env DEBUG=Eleventy:Data* pnpm start",
     "debug:fs": "cross-env DEBUG=Eleventy:FileSystemSearch pnpm start",
-    "build": "eleventy",
     "fmt": "prettier --write ."
   },
   "keywords": [],
@@ -30,6 +32,7 @@
     "cross-env": "^10.1.0",
     "prettier": "^3.8.5",
     "prettier-plugin-jinja-template": "^2.2.0",
+    "wrangler": "^4.105.0",
     "yaml": "^2.9.0"
   }
 }
