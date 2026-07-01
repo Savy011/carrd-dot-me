@@ -1,0 +1,30 @@
+@use "sass:map";
+@use "../config" as c;
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  img,
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-fit: cover;
+  }
+
+  &__profile {
+    border: c.$border;
+  }
+
+  &__info {
+    text-align: center;
+    border: unset;
+    border-top: c.$border;
+    border-bottom: c.$border;
+  }
+
+  &__soojin {
+    border: c.$border;
+  }
+}

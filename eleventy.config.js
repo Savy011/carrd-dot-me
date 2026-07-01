@@ -19,7 +19,9 @@ export default function (cfg) {
 
   cfg.addPlugin(RenderPlugin);
 
-  cfg.addPassthroughCopy({ static: "/" });
+  cfg.addPassthroughCopy({ static: "/", assets: "/assets" });
+
+  cfg.addWatchTarget("./src/lib/styles/");
 
   if (isProd) {
     cfg.addTransform("htmlmin", transforms.minifyHtml);

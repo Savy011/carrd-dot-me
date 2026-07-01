@@ -1,0 +1,30 @@
+@use "sass:map";
+
+$base-size: 1rem;
+
+/**
+ * SIZE SCALE
+ */
+$size-scale: (
+  "300": $base-size * 0.75,
+  "400": $base-size,
+  "500": $base-size * 1.33,
+  "600": $base-size * 1.77,
+  "700": $base-size * 2.36,
+  "800": $base-size * 3.15,
+  "900": $base-size * 4.2,
+  "major": $base-size * 5.6,
+);
+
+$fonts-body: "Literata", Georgia, serif;
+
+/**
+ * COLORS
+ */
+$colors: (
+  "primary": #fa576e,
+  "primary-shade": #fc3e59,
+  "primary-glare": #f26c7f,
+);
+
+$border: 2px map.get($colors, "primary") solid;

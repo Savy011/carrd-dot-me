@@ -1,0 +1,36 @@
+@use "sass:map";
+@use "sass:string";
+
+@use "../config" as c;
+
+.stanlist {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  div {
+    padding: 1rem;
+    border: c.$border;
+    border-top: none;
+
+    &:last-child {
+      border-left: none;
+    }
+  }
+
+  &__heading {
+    text-align: center;
+  }
+
+  &__list {
+    li {
+      font-family: c.$fonts-body;
+      display: inline;
+    }
+
+    :not(:last-child) {
+      &::after {
+        content: ",\00a0";
+      }
+    }
+  }
+}

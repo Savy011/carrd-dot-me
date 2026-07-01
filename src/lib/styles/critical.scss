@@ -1,1 +1,15 @@
 @use "reset";
+
+@use "blocks/header";
+@use "blocks/stanlist";
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.wrapper {
+  max-width: 576px;
+}

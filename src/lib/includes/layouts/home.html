@@ -1,12 +1,16 @@
 {% extends "layouts/base.html" %}
-{% from "macros/stanlist.njk" import StanList %}
+{% from "macros/stanlist.html" import StanList %}
 
 {% block content %}
-  <p>
-    hello!!!!!<br />
-    soojin da best!!!
-  </p>
+  {% include "partials/about.html" %}
 
-  {{ StanList(stanlist.ults, "Ults", "") }}
-  {{ StanList(stanlist.casuals, "Casuals", "") }}
+  <section
+    class="stanlist"
+    id="stanlist"
+  >
+    {{ StanList(stanlist.ults, "Ults", "") }}
+    {{ StanList(stanlist.casuals, "Casuals", "") }}
+  </section>
+
+  {% include "partials/navigation.html" %}
 {% endblock %}
