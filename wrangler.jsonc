@@ -8,5 +8,11 @@
   "assets": {
     "directory": "dist",
   },
+  "routes": [
+    {
+      "pattern": "carrd.yvas.me",
+      "custom_domain": true,
+    },
+  ],
   "compatibility_flags": ["nodejs_compat"],
 }
