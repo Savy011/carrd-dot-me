@@ -2,6 +2,9 @@ import { RenderPlugin } from "@11ty/eleventy";
 
 import * as extenstions from "./src/lib/extensions.js";
 import * as filters from "./src/lib/filters.js";
+import * as transforms from "./src/lib/transforms.js";
+
+const isProd = process.env.NODE_ENV === "production";
 
 export default function (cfg) {
   cfg.setServerOptions({
@@ -17,6 +20,10 @@ export default function (cfg) {
   cfg.addPlugin(RenderPlugin);
 
   cfg.addPassthroughCopy({ static: "/" });
+
+  if (isProd) {
+    cfg.addTransform("htmlmin", transforms.minifyHtml);
+  }
 
   return {
     markdownTemplateEngine: "njk",

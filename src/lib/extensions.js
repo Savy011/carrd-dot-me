@@ -1,5 +1,7 @@
 import path from "node:path";
 
+import cssnano from "cssnano";
+import postcss from "postcss";
 import * as SASS from "sass";
 import YAML from "yaml";
 
@@ -10,6 +12,8 @@ export const yaml = (contents, path) => {
     throw new Error(`Failed to parse YAML in ${path ?? "unknown file"}:\n${err.message}`);
   }
 };
+
+const isProduction = process.env.NODE_ENV === "production";
 
 export const sass = {
   outputFileExtension: "css",
@@ -24,10 +28,18 @@ export const sass = {
       loadPaths: [parsed.dir || ".", this.config.dir.includes],
     });
 
+    let result = compiled.css;
+    if (isProduction) {
+      const minified = await postcss([cssnano]).process(compiled.css, {
+        from: undefined,
+      });
+      result = minified.content;
+    }
+
     this.addDependencies(inputPath, compiled.loadedUrls);
 
     return async data => {
-      return compiled.css;
+      return result;
     };
   },
 };

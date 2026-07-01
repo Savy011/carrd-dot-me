@@ -15,7 +15,7 @@ export default {
     "",
     "^(?!.*[.]css$)[./].*$",
     "",
-    ".css$",
+    "\\.css$",
   ],
   overrides: [
     {
