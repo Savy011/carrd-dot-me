@@ -17,6 +17,7 @@ $size-scale: (
 );
 
 $fonts-body: "Literata", Georgia, serif;
+$fonts-heading: "Bokor", serif;
 
 $size-sm: 640px;
 
@@ -29,3 +30,17 @@ $colors: (
 );
 
 $border: 2px map.get($colors, "pastel-red") solid;
+
+@mixin bordered-container {
+  border: $border;
+  border-top: none;
+
+  > * {
+    border-right: $border;
+    box-sizing: border-box;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+}

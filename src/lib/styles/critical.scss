@@ -15,6 +15,14 @@ body {
   background: map.get(c.$colors, "cinnamoroll-blue");
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: c.$fonts-heading;
+}
+
 .wrapper {
   background-color: white;
   margin: 2rem;
