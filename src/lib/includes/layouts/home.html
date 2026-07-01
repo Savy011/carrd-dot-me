@@ -1,0 +1,25 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+  <p>
+    hello!!!!!<br />
+    soojin da best!!!
+  </p>
+
+  <h3>Ults</h3>
+  <ul>
+    {% for item in stanlist.ults %}
+      <li>
+        {% if item.group %}{{ item.group | titlecase }}{% endif %} {{ item.member | titlecase }}
+      </li>
+    {% endfor %}
+  </ul>
+
+  <h3>Casuals</h3>
+  <ul>
+    {% for item in stanlist.casuals %}
+      <li>
+        {% if item.group %}{{ item.group | titlecase }}{% endif %} {{ item.member | titlecase }}
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
