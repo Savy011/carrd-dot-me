@@ -1,24 +1,12 @@
 {% extends "layouts/base.html" %}
+{% from "macros/stanlist.njk" import StanList %}
+
 {% block content %}
   <p>
     hello!!!!!<br />
     soojin da best!!!
   </p>
 
-  <h3>Ults</h3>
-  <ul
-    style="font-family: Literata"
-    class="list__ults"
-  >
-    {% for item in stanlist.ults %}
-      <li>{% if item.group %}{{ item.group }}{% endif %} {{ item.member }}</li>
-    {% endfor %}
-  </ul>
-
-  <h3>Casuals</h3>
-  <ul>
-    {% for item in stanlist.casuals %}
-      <li>{% if item.group %}{{ item.group }}{% endif %} {{ item.member }}</li>
-    {% endfor %}
-  </ul>
+  {{ StanList(stanlist.ults, "Ults", "") }}
+  {{ StanList(stanlist.casuals, "Casuals", "") }}
 {% endblock %}
