@@ -31,4 +31,12 @@
       }
     }
   }
+
+  @media (max-width: c.$size-sm) {
+    display: block;
+
+    div:last-child {
+      border-left: c.$border;
+    }
+  }
 }
