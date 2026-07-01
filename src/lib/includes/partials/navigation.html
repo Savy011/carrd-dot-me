@@ -1,5 +1,9 @@
-<nav>
+<nav class="navigation">
   {% for item in navigation %}
-    <a href="{{ item.id }}">{{ item.label }}</a>
+    <a
+      href="{{ item.id }}"
+      class="navigation__item"
+      >{{ item.label }}</a
+    >
   {% endfor %}
 </nav>
