@@ -4,12 +4,16 @@
   "description": "",
   "scripts": {
     "start": "eleventy --serve",
+    "dev": "eleventy --serve",
     "build": "eleventy",
     "fmt": "prettier --write ."
   },
   "keywords": [],
-  "author": "",
+  "author": "savy <savy.novachez011@proton.me>",
   "license": "ISC",
+  "engines": {
+    "node": ">22.0.0"
+  },
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
@@ -21,6 +25,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.1.6",
     "prettier": "^3.8.5",
-    "prettier-plugin-jinja-template": "^2.2.0"
+    "prettier-plugin-jinja-template": "^2.2.0",
+    "yaml": "^2.9.0"
   }
 }
