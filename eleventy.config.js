@@ -1,6 +1,8 @@
 import YAML from "yaml";
 
-export default function (cfg) {
+import *  as filters from "./src/lib/filters.js";
+
+export default function(cfg) {
   cfg.setServerOptions({
     port: 1212,
   });
@@ -13,10 +15,7 @@ export default function (cfg) {
     }
   });
 
-  cfg.addFilter("titlecase", str => {
-    if (!str) return "";
-    return str.replace(/\b\w/g, c => c.toUpperCase());
-  });
+  cfg.addFilter("titlecase", filters.titlecase);
 
   return {
     markdownTemplateEngine: "njk",
