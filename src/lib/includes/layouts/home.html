@@ -6,20 +6,19 @@
   </p>
 
   <h3>Ults</h3>
-  <ul>
+  <ul
+    style="font-family: Literata"
+    class="list__ults"
+  >
     {% for item in stanlist.ults %}
-      <li>
-        {% if item.group %}{{ item.group | titlecase }}{% endif %} {{ item.member | titlecase }}
-      </li>
+      <li>{% if item.group %}{{ item.group }}{% endif %} {{ item.member }}</li>
     {% endfor %}
   </ul>
 
   <h3>Casuals</h3>
   <ul>
     {% for item in stanlist.casuals %}
-      <li>
-        {% if item.group %}{{ item.group | titlecase }}{% endif %} {{ item.member | titlecase }}
-      </li>
+      <li>{% if item.group %}{{ item.group }}{% endif %} {{ item.member }}</li>
     {% endfor %}
   </ul>
 {% endblock %}

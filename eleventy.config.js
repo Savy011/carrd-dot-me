@@ -1,21 +1,22 @@
-import YAML from "yaml";
+import { RenderPlugin } from "@11ty/eleventy";
 
-import *  as filters from "./src/lib/filters.js";
+import * as extenstions from "./src/lib/extensions.js";
+import * as filters from "./src/lib/filters.js";
 
-export default function(cfg) {
+export default function (cfg) {
   cfg.setServerOptions({
     port: 1212,
   });
 
-  cfg.addDataExtension("yaml,yml", (contents, path) => {
-    try {
-      return YAML.parse(contents);
-    } catch (err) {
-      throw new Error(`Failed to parse YAML in ${path ?? "unknown file"}:\n${err.message}`);
-    }
-  });
+  cfg.addDataExtension("yaml,yml", extenstions.yaml);
+
+  cfg.addExtension("scss", extenstions.sass);
 
   cfg.addFilter("titlecase", filters.titlecase);
+
+  cfg.addPlugin(RenderPlugin);
+
+  cfg.addPassthroughCopy({ static: "/" });
 
   return {
     markdownTemplateEngine: "njk",

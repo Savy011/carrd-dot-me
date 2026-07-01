@@ -7,10 +7,19 @@ export default {
   printWidth: 100,
   arrowParens: "avoid",
   singleAttributePerLine: true,
-  plugins: ["prettier-plugin-jinja-template"],
+  plugins: ["@ianvs/prettier-plugin-sort-imports", "prettier-plugin-jinja-template"],
+  importOrder: [
+    "<BUILTIN_MODULES>",
+    "",
+    "<THIRD_PARTY_MODULES>",
+    "",
+    "^(?!.*[.]css$)[./].*$",
+    "",
+    ".css$",
+  ],
   overrides: [
     {
-      files: ["*.njk"],
+      files: ["*.html", "*.njk"],
       options: {
         parser: "jinja-template",
       },
