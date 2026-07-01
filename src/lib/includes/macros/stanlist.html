@@ -1,10 +1,11 @@
 {% macro StanList(items, heading, listClass) %}
   <div>
     <h3 class="stanlist__heading">{{ heading }}</h3>
-    <ul class="stanlist__list">
+    <p class="stanlist__list">
       {% for item in items %}
-        <li>{% if item.group %}{{ item.group }} -{% endif %} {{ item.member }}</li>
+        {% if item.group %}{{ item.group }} -{% endif %}
+        {{ item.member }}{% if not loop.last %},{% endif %}
       {% endfor %}
-    </ul>
+    </p>
   </div>
 {% endmacro %}

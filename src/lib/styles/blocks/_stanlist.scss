@@ -22,10 +22,8 @@
   }
 
   &__list {
-    li {
-      font-family: c.$fonts-body;
-      display: inline;
-    }
+    font-family: c.$fonts-body;
+    text-align: center;
 
     :not(:last-child) {
       &::after {
